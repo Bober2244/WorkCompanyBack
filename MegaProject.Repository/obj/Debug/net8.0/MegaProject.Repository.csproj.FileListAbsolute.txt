@@ -1,0 +1,17 @@
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/bin/Debug/net8.0/MegaProject.Repository.deps.json
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/bin/Debug/net8.0/MegaProject.Repository.runtimeconfig.json
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/bin/Debug/net8.0/MegaProject.Repository.dll
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/bin/Debug/net8.0/MegaProject.Repository.pdb
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/Debug/net8.0/MegaProject.Repository.csproj.AssemblyReference.cache
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/Debug/net8.0/MegaProject.Repository.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/Debug/net8.0/MegaProject.Repository.AssemblyInfoInputs.cache
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/Debug/net8.0/MegaProject.Repository.AssemblyInfo.cs
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/Debug/net8.0/MegaProject.Repository.csproj.CoreCompileInputs.cache
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/Debug/net8.0/MegaProject.Repository.dll
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/Debug/net8.0/refint/MegaProject.Repository.dll
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/Debug/net8.0/MegaProject.Repository.pdb
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/Debug/net8.0/MegaProject.Repository.genruntimeconfig.cache
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/Debug/net8.0/ref/MegaProject.Repository.dll
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/bin/Debug/net8.0/MegaProject.Domain.dll
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/bin/Debug/net8.0/MegaProject.Domain.pdb
+/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/Debug/net8.0/MegaProj.41243B53.Up2Date
