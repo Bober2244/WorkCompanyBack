@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5PyB3h+bJTA=",
+  "dgSpecHash": "e6ZpT6cBjfw=",
   "success": true,
-  "projectFilePath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj",
+  "projectFilePath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj",
   "expectedPackageFiles": [
     "/Users/nicolassergeev/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/nicolassergeev/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
+    "/Users/nicolassergeev/.nuget/packages/bcrypt/1.0.0/bcrypt.1.0.0.nupkg.sha512",
+    "/Users/nicolassergeev/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/nicolassergeev/.nuget/packages/csharpfunctionalextensions/3.2.0/csharpfunctionalextensions.3.2.0.nupkg.sha512",
     "/Users/nicolassergeev/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/nicolassergeev/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
@@ -90,5 +92,16 @@
     "/Users/nicolassergeev/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "/Users/nicolassergeev/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BCrypt 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BCrypt",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.API/MegaProject.API.csproj": {}
+    "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.API/MegaProject.API.csproj": {}
   },
   "projects": {
-    "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.API/MegaProject.API.csproj": {
+    "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.API/MegaProject.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.API/MegaProject.API.csproj",
+        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.API/MegaProject.API.csproj",
         "projectName": "MegaProject.API",
-        "projectPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.API/MegaProject.API.csproj",
+        "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.API/MegaProject.API.csproj",
         "packagesPath": "/Users/nicolassergeev/.nuget/packages/",
-        "outputPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.API/obj/",
+        "outputPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nicolassergeev/.nuget/NuGet/NuGet.Config"
@@ -27,11 +27,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/MegaProject.Repository.csproj": {
-                "projectPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/MegaProject.Repository.csproj"
+              "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj": {
+                "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj"
               },
-              "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Services/MegaProject.Services.csproj": {
-                "projectPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Services/MegaProject.Services.csproj"
+              "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Services/MegaProject.Services.csproj": {
+                "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Services/MegaProject.Services.csproj"
               }
             }
           }
@@ -51,6 +51,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -103,14 +111,14 @@
         }
       }
     },
-    "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj": {
+    "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj",
+        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj",
         "projectName": "MegaProject.Domain",
-        "projectPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj",
+        "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj",
         "packagesPath": "/Users/nicolassergeev/.nuget/packages/",
-        "outputPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/obj/",
+        "outputPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nicolassergeev/.nuget/NuGet/NuGet.Config"
@@ -143,6 +151,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "CSharpFunctionalExtensions": {
               "target": "Package",
               "version": "[3.2.0, )"
@@ -192,14 +208,14 @@
         }
       }
     },
-    "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/MegaProject.Repository.csproj": {
+    "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/MegaProject.Repository.csproj",
+        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj",
         "projectName": "MegaProject.Repository",
-        "projectPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/MegaProject.Repository.csproj",
+        "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj",
         "packagesPath": "/Users/nicolassergeev/.nuget/packages/",
-        "outputPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/obj/",
+        "outputPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nicolassergeev/.nuget/NuGet/NuGet.Config"
@@ -215,8 +231,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj": {
-                "projectPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj"
+              "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj": {
+                "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj"
               }
             }
           }
@@ -236,6 +252,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -285,14 +309,14 @@
         }
       }
     },
-    "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Services/MegaProject.Services.csproj": {
+    "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Services/MegaProject.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Services/MegaProject.Services.csproj",
+        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Services/MegaProject.Services.csproj",
         "projectName": "MegaProject.Services",
-        "projectPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Services/MegaProject.Services.csproj",
+        "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Services/MegaProject.Services.csproj",
         "packagesPath": "/Users/nicolassergeev/.nuget/packages/",
-        "outputPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Services/obj/",
+        "outputPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Services/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nicolassergeev/.nuget/NuGet/NuGet.Config"
@@ -308,11 +332,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj": {
-                "projectPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj"
+              "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj": {
+                "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj"
               },
-              "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/MegaProject.Repository.csproj": {
-                "projectPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Repository/MegaProject.Repository.csproj"
+              "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj": {
+                "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj"
               }
             }
           }
@@ -332,6 +356,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

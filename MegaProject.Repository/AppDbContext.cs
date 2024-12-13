@@ -16,6 +16,7 @@ public class AppDbContext(IConfiguration configuration) : DbContext
     public DbSet<Order> Orders { get; set; }
     public DbSet<Purchase> Purchases { get; set; }
     public DbSet<Worker> Workers { get; set; }
+    public DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

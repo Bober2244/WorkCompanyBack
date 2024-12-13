@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj": {}
+    "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj": {}
   },
   "projects": {
-    "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj": {
+    "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj",
+        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj",
         "projectName": "MegaProject.Domain",
-        "projectPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/MegaProject.Domain.csproj",
+        "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj",
         "packagesPath": "/Users/nicolassergeev/.nuget/packages/",
-        "outputPath": "/Users/nicolassergeev/RiderProjects/WebApplication1/MegaProject.Domain/obj/",
+        "outputPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/nicolassergeev/.nuget/NuGet/NuGet.Config"
@@ -44,6 +44,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "CSharpFunctionalExtensions": {
               "target": "Package",
               "version": "[3.2.0, )"
