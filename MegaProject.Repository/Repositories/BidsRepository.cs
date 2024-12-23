@@ -58,8 +58,7 @@ public class BidsRepository : IBidsRepository
             .ExecuteUpdateAsync(bo => bo
                 .SetProperty(bo => bo.DateOfRequest, entity.DateOfRequest)
                 .SetProperty(bo => bo.ConstructionPeriod, entity.ConstructionPeriod)
-                .SetProperty(bo => bo.CustomerId, entity.CustomerId)
-                .SetProperty(bo => bo.Orders, entity.Orders));
+                .SetProperty(bo => bo.CustomerId, entity.CustomerId));
 
         return result > 0;
     }

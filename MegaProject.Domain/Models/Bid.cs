@@ -3,7 +3,7 @@ namespace MegaProject.Domain.Models;
 //Заявка
 public class Bid : DatabaseEntity.DatabaseEntity
 {
-    public DateTime DateOfRequest { get; set; } 
+    public DateOnly DateOfRequest { get; set; } 
     public int ConstructionPeriod { get; set; } 
 
     public int CustomerId { get; set; } 

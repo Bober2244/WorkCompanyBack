@@ -36,8 +36,8 @@ namespace MegaProject.Repository.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateOfRequest")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("DateOfRequest")
+                        .HasColumnType("date");
 
                     b.HasKey("Id");
 
@@ -178,11 +178,11 @@ namespace MegaProject.Repository.Migrations
                     b.Property<int>("BidId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("EndDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("EndDate")
+                        .HasColumnType("date");
 
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("StartDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("WorkStatus")
                         .IsRequired()
