@@ -16,6 +16,20 @@ public class OrdersController : ControllerBase
     {
         _ordersService = ordersService;
     }
+    
+    [HttpPost("{orderId:int}/apply")]
+    public async Task<IActionResult> ApplyForOrder(int orderId, [FromBody] int brigadeId)
+    {
+        try
+        {
+            await _ordersService.ApplyForOrderAsync(orderId, brigadeId);
+            return Ok(new { Message = "Бригада успешно откликнулась на заказ." });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { Message = "Ошибка при отклике на заказ.", Details = ex.Message });
+        }
+    }
 
     [HttpGet]
     public async Task<IActionResult> GetOrders()
@@ -78,7 +92,8 @@ public class OrdersController : ControllerBase
             StartDate = orderDto.StartDate,
             EndDate = orderDto.EndDate,
             WorkStatus = orderDto.WorkStatus,
-            BidId = orderDto.BidId
+            BidId = orderDto.BidId,
         };
     }
+
 }

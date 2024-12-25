@@ -12,6 +12,34 @@ public class OrdersRepository : IOrdersRepository
     {
         _context = context;
     }
+    
+    public async Task ApplyForOrderAsync(int orderId, int brigadeId)
+    {
+        var order = await _context.Orders.FindAsync(orderId);
+        if (order == null)
+            throw new Exception("Заказ не найден");
+
+        var brigade = await _context.Brigades.FindAsync(brigadeId);
+        if (brigade == null)
+            throw new Exception("Бригада не найдена");
+
+        var existingRelation = await _context.BrigadeOrders
+            .AnyAsync(bo => bo.OrderId == orderId && bo.BrigadeId == brigadeId);
+        if (existingRelation)
+            throw new Exception("Бригада уже откликнулась на этот заказ");
+
+        var brigadeOrder = new BrigadeOrder
+        {
+            OrderId = orderId,
+            BrigadeId = brigadeId
+        };
+        _context.BrigadeOrders.Add(brigadeOrder);
+
+        order.WorkStatus = "Откликнулся";
+        _context.Orders.Update(order);
+
+        await _context.SaveChangesAsync();
+    }
 
     public async Task<Order> Create(Order entity)
     {
@@ -29,7 +57,7 @@ public class OrdersRepository : IOrdersRepository
     public async Task<List<Order>> Get()
     {
         return await _context.Orders.AsNoTracking().
-            Include(w => w.Bid).Include(w => w.MaterialOrders).Include(w => w.BrigadeOrders).ToListAsync();
+            Include(w => w.Bid).Include(w => w.MaterialOrders).Include(w => w.BrigadeOrders).ThenInclude(bo => bo.Brigade).ToListAsync();
     }
 
     public async Task<bool> Delete(int id)
@@ -45,20 +73,38 @@ public class OrdersRepository : IOrdersRepository
     }
 
     public async Task<bool> Update(Order entity)
+{
+    try
     {
-        var result = await _context.Orders
-            .Where(w => w.Id == entity.Id)
-            .Include(w => w.MaterialOrders)
-            .Include(w => w.BrigadeOrders)
-            .Include(w => w.Bid)
-            .ExecuteUpdateAsync(w => w
-                .SetProperty(w => w.StartDate, entity.StartDate)
-                .SetProperty(w => w.EndDate, entity.EndDate)
-                .SetProperty(w => w.WorkStatus, entity.WorkStatus)
-                .SetProperty(w => w.MaterialOrders, entity.MaterialOrders)
-                .SetProperty(w => w.BrigadeOrders, entity.BrigadeOrders)
-                .SetProperty(w => w.BidId, entity.BidId));
+        var order = await _context.Orders
+            .Include(o => o.MaterialOrders)
+            .Include(o => o.BrigadeOrders)
+            .FirstOrDefaultAsync(o => o.Id == entity.Id);
 
-        return result > 0;
+        if (order == null)
+        {
+            // Order not found
+            return false;
+        }
+
+        // Update simple properties
+        order.StartDate = entity.StartDate;
+        order.EndDate = entity.EndDate;
+        order.WorkStatus = entity.WorkStatus;
+        order.BidId = entity.BidId;
+
+        // Save changes to the database
+        await _context.SaveChangesAsync();
+        return true;
     }
+    catch (Exception ex)
+    {
+        // Log the error
+        Console.Error.WriteLine($"Error updating order: {ex.Message}");
+        return false;
+    }
+}
+
+
+
 }

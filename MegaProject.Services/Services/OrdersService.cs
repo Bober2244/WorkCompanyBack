@@ -35,4 +35,9 @@ public class OrdersService : IOrdersService
     {
         return await _ordersRepository.Update(entity);
     }
+
+    public async Task ApplyForOrderAsync(int orderId, int brigadeId)
+    {
+        await _ordersRepository.ApplyForOrderAsync(orderId, brigadeId);
+    }
 }

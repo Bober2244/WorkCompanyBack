@@ -35,6 +35,8 @@ public class BidsRepository : IBidsRepository
             .AsNoTracking()
             .Include(bo => bo.Customer)
             .Include(bo => bo.Orders)
+            .ThenInclude(bo => bo.BrigadeOrders)
+            .ThenInclude(bo => bo.Brigade)
             .ToListAsync();
     }
 

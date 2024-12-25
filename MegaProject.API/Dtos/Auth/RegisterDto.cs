@@ -15,7 +15,6 @@ public class RegisterDto
     public string ConfirmPassword { get; set; } = String.Empty;
     
     [Required] 
-    [RoleValidation]
     public int Role { get; set; }
     
     

@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace MegaProject.Domain.Models;
@@ -12,6 +13,8 @@ public class Worker : DatabaseEntity.DatabaseEntity
     public string PhoneNumber { get; set; } 
     public string Email { get; set; } 
 
+    [JsonIgnore]
     public int? BrigadeId { get; set; } 
+    [JsonIgnore]
     public Brigade? Brigade { get; set; } 
 }

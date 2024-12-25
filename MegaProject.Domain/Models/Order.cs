@@ -13,6 +13,8 @@ public class Order : DatabaseEntity.DatabaseEntity
     public int BidId { get; set; }
     [JsonIgnore]
     public Bid Bid { get; set; }
+    [JsonIgnore]
     public ICollection<MaterialOrder> MaterialOrders { get; set; } 
+
     public ICollection<BrigadeOrder> BrigadeOrders { get; set; } 
 }
