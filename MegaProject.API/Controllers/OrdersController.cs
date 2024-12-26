@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using MegaProject.Domain.Models;
 using MegaProject.Dtos;
+using MegaProject.Repository;
 using MegaProject.Services;
 using MegaProject.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace MegaProject.Controllers;
 
@@ -11,12 +13,14 @@ namespace MegaProject.Controllers;
 public class OrdersController : ControllerBase
 {
     private readonly IOrdersService _ordersService;
+    private readonly AppDbContext _context;
 
-    public OrdersController(IOrdersService ordersService)
+    public OrdersController(IOrdersService ordersService, AppDbContext context)
     {
         _ordersService = ordersService;
+        _context = context;
     }
-    
+
     [HttpPost("{orderId:int}/apply")]
     public async Task<IActionResult> ApplyForOrder(int orderId, [FromBody] int brigadeId)
     {
@@ -95,5 +99,98 @@ public class OrdersController : ControllerBase
             BidId = orderDto.BidId,
         };
     }
+    
+    [HttpGet("{orderId}/materials")]
+    public async Task<IActionResult> GetMaterialsForOrder(int orderId)
+    {
+        // Находим заказ с указанным ID, включая привязанные материалы
+        var order = await _context.Orders
+            .Include(o => o.MaterialOrders)
+            .ThenInclude(mo => mo.Material)
+            .FirstOrDefaultAsync(o => o.Id == orderId);
 
+        if (order == null)
+        {
+            return NotFound($"Заказ с ID {orderId} не найден.");
+        }
+
+        // Формируем список материалов для ответа
+        var materials = order.MaterialOrders.Select(mo => new
+        {
+            MaterialId = mo.MaterialId,
+            Name = mo.Material.Name,
+            Quantity = mo.Quantity,
+            MeasurementUnit = mo.Material.MeasurementUnit
+        });
+
+        return Ok(materials);
+    }
+
+
+    [HttpPost("{orderId}/materials")]
+    public async Task<IActionResult> AttachMaterialToOrder(int orderId, [FromBody] AttachMaterialDto dto)
+    {
+        var order = await _context.Orders
+            .Include(o => o.MaterialOrders) // Загружаем связанные записи
+            .FirstOrDefaultAsync(o => o.Id == orderId);
+
+        if (order == null)
+        {
+            return NotFound($"Заказ с ID {orderId} не найден.");
+        }
+
+        // Проверяем существование материала
+        var material = await _context.Materials.FindAsync(dto.MaterialId);
+        if (material == null)
+        {
+            return NotFound($"Материал с ID {dto.MaterialId} не найден.");
+        }
+
+        // Проверяем достаточное количество материала
+        if (dto.Quantity > material.Quantity)
+        {
+            return BadRequest($"Недостаточно материала. Доступно: {material.Quantity} {material.MeasurementUnit}.");
+        }
+
+        // Привязываем материал к заказу
+        var existingMaterialOrder = order.MaterialOrders
+            .FirstOrDefault(mo => mo.MaterialId == dto.MaterialId);
+
+        if (existingMaterialOrder != null)
+        {
+            // Если материал уже привязан, обновляем количество
+            existingMaterialOrder.Quantity += dto.Quantity;
+        }
+        else
+        {
+            // Создаем новую запись
+            var materialOrder = new MaterialOrder
+            {
+                OrderId = orderId,
+                MaterialId = dto.MaterialId,
+                Quantity = dto.Quantity
+            };
+            order.MaterialOrders.Add(materialOrder);
+        }
+
+        // Обновляем количество материала на складе
+        material.Quantity -= dto.Quantity;
+
+        // Сохраняем изменения
+        await _context.SaveChangesAsync();
+
+        return Ok(new
+        {
+            Message = "Материал успешно привязан к заказу.",
+            MaterialId = dto.MaterialId,
+            OrderId = orderId,
+            RemainingMaterialQuantity = material.Quantity
+        });
+    }
+
+    public class AttachMaterialDto
+    {
+        public int MaterialId { get; set; }
+        public int Quantity { get; set; }
+    }
 }
