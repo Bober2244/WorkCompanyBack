@@ -20,6 +20,23 @@ public class OrdersController : ControllerBase
         _ordersService = ordersService;
         _context = context;
     }
+    
+    [HttpPatch("{orderId:int}/status")]
+    public async Task<IActionResult> UpdateOrderStatus(int orderId, [FromBody] string newStatus)
+    {
+        var order = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId);
+        if (order == null)
+        {
+            return NotFound($"Заказ с ID {orderId} не найден.");
+        }
+
+        order.WorkStatus = newStatus;
+
+        await _context.SaveChangesAsync();
+
+        return Ok(new { Message = "Статус заказа успешно обновлен.", OrderId = orderId, NewStatus = newStatus });
+    }
+
 
     [HttpPost("{orderId:int}/apply")]
     public async Task<IActionResult> ApplyForOrder(int orderId, [FromBody] int brigadeId)

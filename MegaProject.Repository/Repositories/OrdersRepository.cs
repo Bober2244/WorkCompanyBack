@@ -35,7 +35,7 @@ public class OrdersRepository : IOrdersRepository
         };
         _context.BrigadeOrders.Add(brigadeOrder);
 
-        order.WorkStatus = "Откликнулся";
+        order.WorkStatus = "В работе";
         _context.Orders.Update(order);
 
         await _context.SaveChangesAsync();
