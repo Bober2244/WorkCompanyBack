@@ -58,6 +58,9 @@ namespace MegaProject.Repository.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
                     b.Property<int>("WorkerCount")
                         .HasColumnType("int");
 
@@ -230,6 +233,9 @@ namespace MegaProject.Repository.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("BrigadeId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -246,6 +252,10 @@ namespace MegaProject.Repository.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BrigadeId")
+                        .IsUnique()
+                        .HasFilter("[BrigadeId] IS NOT NULL");
 
                     b.ToTable("Users", (string)null);
                 });
@@ -355,6 +365,16 @@ namespace MegaProject.Repository.Migrations
                     b.Navigation("Material");
                 });
 
+            modelBuilder.Entity("MegaProject.Domain.Models.User", b =>
+                {
+                    b.HasOne("MegaProject.Domain.Models.Brigade", "Brigade")
+                        .WithOne("User")
+                        .HasForeignKey("MegaProject.Domain.Models.User", "BrigadeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("Brigade");
+                });
+
             modelBuilder.Entity("MegaProject.Domain.Models.Worker", b =>
                 {
                     b.HasOne("MegaProject.Domain.Models.Brigade", "Brigade")
@@ -372,6 +392,8 @@ namespace MegaProject.Repository.Migrations
             modelBuilder.Entity("MegaProject.Domain.Models.Brigade", b =>
                 {
                     b.Navigation("BrigadeOrders");
+
+                    b.Navigation("User");
 
                     b.Navigation("Workers");
                 });

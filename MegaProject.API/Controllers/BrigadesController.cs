@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using MegaProject.Domain.Models;
 using MegaProject.Dtos;
+using MegaProject.Repository;
 using MegaProject.Services;
 using MegaProject.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace MegaProject.Controllers;
 
@@ -11,10 +13,38 @@ namespace MegaProject.Controllers;
 public class BrigadesController : ControllerBase
 {
     private readonly IBrigadesService _brigadesService;
+    private readonly AppDbContext _context;
 
-    public BrigadesController(IBrigadesService brigadesService)
+    public BrigadesController(IBrigadesService brigadesService, AppDbContext context)
     {
         _brigadesService = brigadesService;
+        _context = context;
+    }
+    
+    
+    
+    [HttpGet("user-brigade/{userId:int}")]
+    public async Task<IActionResult> GetBrigadeByUserId(int userId)
+    {
+        // Проверяем, существует ли пользователь с указанным userId
+        var userExists = await _context.Users.AnyAsync(u => u.Id == userId);
+        if (!userExists)
+        {
+            return NotFound("Пользователь с указанным ID не найден.");
+        }
+
+        // Получаем бригаду, связанную с этим userId, включая связанные данные
+        var brigade = await _context.Brigades
+            .Include(b => b.Workers)          // Загрузить связанных работников
+            .Include(b => b.BrigadeOrders)   // Загрузить заказы, связанные с бригадой
+            .FirstOrDefaultAsync(b => b.UserId == userId);
+
+        if (brigade == null)
+        {
+            return NotFound("Бригада для указанного пользователя не найдена.");
+        }
+
+        return Ok(brigade); // Возвращаем сущность полностью
     }
 
     [HttpGet]
@@ -65,7 +95,8 @@ public class BrigadesController : ControllerBase
         return new BrigadeDto
         {
             Name = brigade.Name,
-            WorkerCount = brigade.WorkerCount
+            WorkerCount = brigade.WorkerCount,
+            UserId = brigade.UserId
         };
     }
 
@@ -74,7 +105,9 @@ public class BrigadesController : ControllerBase
         return new Brigade
         {
             Name = brigadeDto.Name,
-            WorkerCount = brigadeDto.WorkerCount
+            WorkerCount = brigadeDto.WorkerCount,
+            UserId = brigadeDto.UserId
+            
         };
     }
 }

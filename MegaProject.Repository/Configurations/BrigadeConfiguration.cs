@@ -17,5 +17,11 @@ public class BrigadeConfiguration : IEntityTypeConfiguration<Brigade>
         builder.HasMany(b => b.BrigadeOrders)
             .WithOne(bo => bo.Brigade)
             .HasForeignKey(bo => bo.BrigadeId);
+        
+        builder
+            .HasOne(b => b.User)
+            .WithOne(u => u.Brigade)
+            .HasForeignKey<Brigade>(b => b.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

@@ -14,8 +14,19 @@ public class BrigadesRepository : IBrigadesRepository
     }
     public async Task<Brigade> Create(Brigade entity)
     {
+        // Добавляем бригаду
         await _context.Brigades.AddAsync(entity);
         await _context.SaveChangesAsync();
+
+        // Устанавливаем связь между пользователем и бригадой
+        var user = await _context.Users.FindAsync(entity.UserId);
+        if (user != null)
+        {
+            user.BrigadeId = entity.Id;
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+        }
+
         return entity;
     }
 
@@ -38,7 +49,18 @@ public class BrigadesRepository : IBrigadesRepository
             return false;
         }
 
-        await _context.Brigades.Where(w => w.Id == id).Include(e => e.BrigadeOrders).ExecuteDeleteAsync();
+        // Убираем связь между бригадой и пользователем
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.BrigadeId == id);
+        if (user != null)
+        {
+            user.BrigadeId = null;
+            _context.Users.Update(user);
+        }
+
+        // Удаляем бригаду
+        _context.Brigades.Remove(brigade);
+        await _context.SaveChangesAsync();
+
         return true;
     }
 

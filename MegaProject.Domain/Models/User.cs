@@ -9,4 +9,8 @@ public class User : DatabaseEntity.DatabaseEntity
     public string Email { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
     public TypeRole Role { get; set; } = TypeRole.BrigadeController;
+
+    // Связь один к одному с бригадой
+    public int? BrigadeId { get; set; }
+    public Brigade? Brigade { get; set; }
 }
