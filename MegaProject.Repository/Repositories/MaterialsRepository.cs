@@ -15,7 +15,13 @@ public class MaterialsRepository : IMaterialsRepository
 
     public async Task<Material> Create(Material entity)
     {
-        await _context.Materials.AddAsync(entity);
+        await _context.Materials.AddAsync(new Material
+        {
+            Id = _context.Materials.Max(x => x.Id) + 1,
+            Name = entity.Name,
+            Quantity = entity.Quantity,
+            MeasurementUnit = entity.MeasurementUnit,
+        });
         await _context.SaveChangesAsync();
         return entity;
     }

@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Services/MegaProject.Services.csproj": {}
+    "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Services/MegaProject.Services.csproj": {}
   },
   "projects": {
-    "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj": {
+    "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Domain/MegaProject.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj",
+        "projectUniqueName": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Domain/MegaProject.Domain.csproj",
         "projectName": "MegaProject.Domain",
-        "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj",
-        "packagesPath": "/Users/nicolassergeev/.nuget/packages/",
-        "outputPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/obj/",
+        "projectPath": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Domain/MegaProject.Domain.csproj",
+        "packagesPath": "/Users/bi_ba/.nuget/packages/",
+        "outputPath": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/nicolassergeev/.nuget/NuGet/NuGet.Config"
+          "/Users/bi_ba/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/Users/nicolassergeev/.dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -62,10 +61,6 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -79,6 +74,18 @@
             "Microsoft.Extensions.Logging.Console": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.3.0, )"
             }
           },
           "imports": [
@@ -97,35 +104,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/nicolassergeev/.dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj": {
+    "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Repository/MegaProject.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj",
+        "projectUniqueName": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Repository/MegaProject.Repository.csproj",
         "projectName": "MegaProject.Repository",
-        "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj",
-        "packagesPath": "/Users/nicolassergeev/.nuget/packages/",
-        "outputPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/obj/",
+        "projectPath": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Repository/MegaProject.Repository.csproj",
+        "packagesPath": "/Users/bi_ba/.nuget/packages/",
+        "outputPath": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Repository/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/nicolassergeev/.nuget/NuGet/NuGet.Config"
+          "/Users/bi_ba/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/Users/nicolassergeev/.dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj": {
-                "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj"
+              "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Domain/MegaProject.Domain.csproj": {
+                "projectPath": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Domain/MegaProject.Domain.csproj"
               }
             }
           }
@@ -163,10 +169,6 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -180,6 +182,18 @@
             "Microsoft.Extensions.Logging.Console": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.3.0, )"
             }
           },
           "imports": [
@@ -198,38 +212,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/nicolassergeev/.dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Services/MegaProject.Services.csproj": {
+    "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Services/MegaProject.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Services/MegaProject.Services.csproj",
+        "projectUniqueName": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Services/MegaProject.Services.csproj",
         "projectName": "MegaProject.Services",
-        "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Services/MegaProject.Services.csproj",
-        "packagesPath": "/Users/nicolassergeev/.nuget/packages/",
-        "outputPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Services/obj/",
+        "projectPath": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Services/MegaProject.Services.csproj",
+        "packagesPath": "/Users/bi_ba/.nuget/packages/",
+        "outputPath": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Services/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/nicolassergeev/.nuget/NuGet/NuGet.Config"
+          "/Users/bi_ba/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/Users/nicolassergeev/.dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj": {
-                "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/MegaProject.Domain.csproj"
+              "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Domain/MegaProject.Domain.csproj": {
+                "projectPath": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Domain/MegaProject.Domain.csproj"
               },
-              "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj": {
-                "projectPath": "/Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Repository/MegaProject.Repository.csproj"
+              "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Repository/MegaProject.Repository.csproj": {
+                "projectPath": "/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Repository/MegaProject.Repository.csproj"
               }
             }
           }
@@ -263,10 +276,6 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -280,6 +289,18 @@
             "Microsoft.Extensions.Logging.Console": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.3.0, )"
             }
           },
           "imports": [
@@ -298,7 +319,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/nicolassergeev/.dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

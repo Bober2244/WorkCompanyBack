@@ -16,6 +16,6 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MegaProject.Domain
-build_property.ProjectDir = /Users/nicolassergeev/RiderProjects/MegaProject/MegaProject.Domain/
+build_property.ProjectDir = /Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.Domain/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

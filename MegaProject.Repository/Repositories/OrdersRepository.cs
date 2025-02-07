@@ -30,6 +30,7 @@ public class OrdersRepository : IOrdersRepository
 
         var brigadeOrder = new BrigadeOrder
         {
+            Id = _context.BrigadeOrders.Max(bo => bo.Id) + 1,
             OrderId = orderId,
             BrigadeId = brigadeId
         };
