@@ -15,7 +15,15 @@ public class UsersRepository : IUsersRepository
 
     public async Task<User> Create(User entity)
     {
-        await _context.Users.AddAsync(entity);
+        await _context.Users.AddAsync(new User
+        {
+            Id = _context.Users.Max(x => x.Id) + 1,
+            UserName = entity.UserName,
+            Email = entity.Email,
+            Password = entity.Password,
+            Role = entity.Role,
+            
+        });
         await _context.SaveChangesAsync();
         return entity;
     }

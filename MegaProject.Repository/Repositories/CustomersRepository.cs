@@ -15,7 +15,15 @@ public class CustomersRepository : ICustomersRepository
 
     public async Task<Customer> Create(Customer entity)
     {
-        await _context.Customers.AddAsync(entity);
+        await _context.Customers.AddAsync(new Customer
+            {
+                Id = _context.Users.Max(x => x.Id),
+                FullName = entity.FullName,
+                DateOfBirth = DateTime.SpecifyKind(entity.DateOfBirth, DateTimeKind.Utc),
+                PhoneNumber = entity.PhoneNumber,
+                Email = entity.Email,
+            }
+            );
         await _context.SaveChangesAsync();
         return entity;
     }
