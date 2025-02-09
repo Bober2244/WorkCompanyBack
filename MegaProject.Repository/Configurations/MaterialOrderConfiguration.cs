@@ -17,5 +17,9 @@ public class MaterialOrderConfiguration : IEntityTypeConfiguration<MaterialOrder
         builder.HasOne(mo => mo.Material)
             .WithMany(m => m.MaterialOrders)
             .HasForeignKey(mo => mo.MaterialId);
+        builder
+            .Property(x => x.OrderId)
+            .IsRequired()
+            .ValueGeneratedOnAdd();
     }
 }

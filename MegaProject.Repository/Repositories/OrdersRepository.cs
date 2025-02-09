@@ -44,9 +44,17 @@ public class OrdersRepository : IOrdersRepository
 
     public async Task<Order> Create(Order entity)
     {
-        await _context.Orders.AddAsync(entity);
+        var newEntity = new Order
+        {
+            Id = _context.Orders.Max(order => order.Id) + 1,
+            StartDate = entity.StartDate,
+            EndDate = entity.EndDate,
+            WorkStatus = entity.WorkStatus,
+            BidId = entity.BidId,
+        };
+        await _context.Orders.AddAsync(newEntity);
         await _context.SaveChangesAsync();
-        return entity;
+        return newEntity;
     }
 
     public async Task<Order> GetById(int id)

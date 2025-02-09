@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MegaProject.Domain.Models;
 using MegaProject.Dtos;
+using MegaProject.Repository.Repositories;
 using MegaProject.Services.Interfaces;
 
 namespace MegaProject.Controllers;
@@ -24,11 +25,11 @@ public class BidsController : ControllerBase
     }
 
     [HttpGet("{id:int}")]
-    public async Task<IActionResult> GetBidById(int id)
+    public async Task<IActionResult> GetBidsById(int id)
     {
-        var bid = await _bidsService.GetById(id);
-        if (bid == null) return NotFound();
-        return Ok(bid);
+        var bids = await _bidsService.GetBidsById(id);
+        if (bids == null) return NotFound();
+        return Ok(bids);
     }
 
     [HttpPost]

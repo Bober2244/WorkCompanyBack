@@ -18,6 +18,11 @@ public class BidsService : IBidsService
         return await _bidsRepository.Get();
     }
 
+    public async Task<List<Bid>> GetBidsById(int id)
+    {
+        return await _bidsRepository.GetBidsById(id);
+    }
+
     public async Task<Bid> GetById(int id)
     {
         return await _bidsRepository.GetById(id);

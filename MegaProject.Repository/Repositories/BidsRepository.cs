@@ -15,9 +15,16 @@ public class BidsRepository : IBidsRepository
 
     public async Task<Bid> Create(Bid entity)
     {
-        await _context.Bids.AddAsync(entity);
+        var newEntity = new Bid
+        {
+            Id = _context.Bids.Count() + 1,
+            DateOfRequest = entity.DateOfRequest,
+            ConstructionPeriod = entity.ConstructionPeriod,
+            CustomerId = entity.CustomerId
+        };
+        await _context.Bids.AddAsync(newEntity);
         await _context.SaveChangesAsync();
-        return entity;
+        return newEntity;
     }
 
     public async Task<Bid> GetById(int id)
@@ -27,6 +34,16 @@ public class BidsRepository : IBidsRepository
             .Include(bo => bo.Customer)
             .Include(bo => bo.Orders)
             .FirstOrDefaultAsync(bo => bo.Id == id);
+    }
+    
+    public async Task<List<Bid>> GetBidsById(int id)
+    {
+        return await _context.Bids
+            .AsNoTracking()
+            .Include(bo => bo.Customer)
+            .Include(bo => bo.Orders)
+            .Where(bo => bo.CustomerId == id)
+            .ToListAsync();
     }
 
     public async Task<List<Bid>> Get()
