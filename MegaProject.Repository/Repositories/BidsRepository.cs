@@ -17,7 +17,7 @@ public class BidsRepository : IBidsRepository
     {
         var newEntity = new Bid
         {
-            Id = _context.Bids.Count() + 1,
+            Id = _context.Bids.Max(x => x.Id) + 1,
             DateOfRequest = entity.DateOfRequest,
             ConstructionPeriod = entity.ConstructionPeriod,
             CustomerId = entity.CustomerId
@@ -42,6 +42,8 @@ public class BidsRepository : IBidsRepository
             .AsNoTracking()
             .Include(bo => bo.Customer)
             .Include(bo => bo.Orders)
+            .ThenInclude(bo => bo.BrigadeOrders)
+            .ThenInclude(bo => bo.Brigade)
             .Where(bo => bo.CustomerId == id)
             .ToListAsync();
     }

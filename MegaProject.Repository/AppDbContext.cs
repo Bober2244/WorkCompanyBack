@@ -21,7 +21,7 @@ public class AppDbContext(IConfiguration configuration) : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder
-            .UseSqlServer(configuration.GetConnectionString("Database"))
+            .UseNpgsql(configuration.GetConnectionString("Database"))
             .UseLoggerFactory(CreateLoggerFactory())
             .EnableSensitiveDataLogging();
     }

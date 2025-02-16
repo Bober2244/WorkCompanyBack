@@ -12,10 +12,18 @@ public class BrigadesRepository : IBrigadesRepository
     {
         _context = context;
     }
+
     public async Task<Brigade> Create(Brigade entity)
     {
         // Добавляем бригаду
-        await _context.Brigades.AddAsync(entity);
+        await _context.Brigades.AddAsync(
+            new Brigade
+            {
+                Id = _context.Brigades.Max(b => b.Id) + 1,
+                Name = entity.Name,
+                WorkerCount = entity.WorkerCount,
+                UserId = entity.UserId
+            });
         await _context.SaveChangesAsync();
 
         // Устанавливаем связь между пользователем и бригадой
@@ -32,13 +40,20 @@ public class BrigadesRepository : IBrigadesRepository
 
     public async Task<Brigade> GetById(int id)
     {
-        return await _context.Brigades.AsNoTracking().Include(w => w.Workers).Include(w => w.BrigadeOrders).FirstOrDefaultAsync(w => w.Id == id);
+        return await _context.Brigades
+            .AsNoTracking()
+            .Include(w => w.Workers)
+            .Include(w => w.BrigadeOrders)
+            .FirstOrDefaultAsync(w => w.Id == id);
     }
 
     public async Task<List<Brigade>> Get()
     {
-        return await _context.Brigades.AsNoTracking().
-            Include(w => w.Workers).Include(w => w.BrigadeOrders).ToListAsync();
+        return await _context.Brigades
+            .AsNoTracking()
+            .Include(w => w.Workers)
+            .Include(w => w.BrigadeOrders)
+            .ToListAsync();
     }
 
     public async Task<bool> Delete(int id)

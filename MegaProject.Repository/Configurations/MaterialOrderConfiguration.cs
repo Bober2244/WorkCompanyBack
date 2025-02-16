@@ -21,5 +21,7 @@ public class MaterialOrderConfiguration : IEntityTypeConfiguration<MaterialOrder
             .Property(x => x.OrderId)
             .IsRequired()
             .ValueGeneratedOnAdd();
+        builder.Property(x => x.Id)
+            .UseIdentityAlwaysColumn();
     }
 }

@@ -183,7 +183,6 @@ public class OrdersController : ControllerBase
             // Создаем новую запись
             var materialOrder = new MaterialOrder
             {
-                Id = _context.MaterialOrders.Max(mo => mo.Id) + 1,
                 OrderId = orderId,
                 MaterialId = dto.MaterialId,
                 Quantity = dto.Quantity
