@@ -59,14 +59,23 @@ public class OrdersRepository : IOrdersRepository
 
     public async Task<Order> GetById(int id)
     {
-        return await _context.Orders.AsNoTracking().Include(w => w.Bid).Include(w => w.MaterialOrders).Include(w => w.BrigadeOrders).FirstOrDefaultAsync(w => w.Id == id);
-
+        return await _context.Orders
+            .AsNoTracking()
+            .Include(w => w.Bid)
+            .Include(w => w.MaterialOrders)
+            .Include(w => w.BrigadeOrders)
+            .FirstOrDefaultAsync(w => w.Id == id);
     }
 
     public async Task<List<Order>> Get()
     {
-        return await _context.Orders.AsNoTracking().
-            Include(w => w.Bid).Include(w => w.MaterialOrders).Include(w => w.BrigadeOrders).ThenInclude(bo => bo.Brigade).ToListAsync();
+        return await _context.Orders
+            .AsNoTracking()
+            .Include(w => w.Bid)
+            .Include(w => w.MaterialOrders)
+            .Include(w => w.BrigadeOrders)
+            .ThenInclude(bo => bo.Brigade)
+            .ToListAsync();
     }
 
     public async Task<bool> Delete(int id)

@@ -23,6 +23,7 @@ public class AppDbContext(IConfiguration configuration) : DbContext
         optionsBuilder
             .UseNpgsql(configuration.GetConnectionString("Database"))
             .UseLoggerFactory(CreateLoggerFactory())
+            .LogTo(Console.WriteLine)
             .EnableSensitiveDataLogging();
     }
 
