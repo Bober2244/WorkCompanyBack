@@ -56,15 +56,57 @@ public class OrdersController : ControllerBase
     public async Task<IActionResult> GetOrders()
     {
         var orders = await _ordersService.Get();
-        return Ok(orders);
+    
+        var orderDtos = orders.Select(order => new OrderDtoWithBid
+        {
+            Id = order.Id,
+            StartDate = order.StartDate,
+            EndDate = order.EndDate,
+            WorkStatus = order.WorkStatus,
+            BidId = order.BidId,
+
+            Bid = order.Bid == null ? null : new BidDtoWithOnlyObjectName
+            {
+                DateOfRequest = order.Bid.DateOfRequest,
+                ConstructionPeriod = order.Bid.ConstructionPeriod,
+                CustomerId = order.Bid.CustomerId,
+                Customer = order.Bid.Customer,
+                Orders = order.Bid.Orders,
+                ObjectName = order.Bid.ObjectName
+            },
+
+            MaterialOrders = order.MaterialOrders,
+            BrigadeOrders = order.BrigadeOrders
+        }).ToList();
+
+        return Ok(orderDtos);
     }
+
 
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetOrderById(int id)
     {
         var order = await _ordersService.GetById(id);
-        if (order == null) return NotFound();
-        return Ok(order);
+        if (order == null)
+            return NotFound();
+
+        var orderDto = new OrderDtoWithBid
+        {
+            Id = order.Id,
+            StartDate = order.StartDate,
+            EndDate = order.EndDate,
+            WorkStatus = order.WorkStatus,
+            BidId = order.BidId,
+
+            Bid = new BidDtoWithOnlyObjectName
+            {
+                ObjectName = order.Bid?.ObjectName
+            },
+
+            BrigadeOrders = order.BrigadeOrders
+        };
+
+        return Ok(orderDto);
     }
 
     [HttpPost]

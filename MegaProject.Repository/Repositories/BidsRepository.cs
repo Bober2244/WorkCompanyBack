@@ -20,7 +20,8 @@ public class BidsRepository : IBidsRepository
             Id = _context.Bids.Max(x => x.Id) + 1,
             DateOfRequest = entity.DateOfRequest,
             ConstructionPeriod = entity.ConstructionPeriod,
-            CustomerId = entity.CustomerId
+            CustomerId = entity.CustomerId,
+            ObjectName = entity.ObjectName
         };
         await _context.Bids.AddAsync(newEntity);
         await _context.SaveChangesAsync();

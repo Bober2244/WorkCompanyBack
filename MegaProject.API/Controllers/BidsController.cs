@@ -66,7 +66,8 @@ public class BidsController : ControllerBase
         {
             DateOfRequest = bid.DateOfRequest,
             ConstructionPeriod = bid.ConstructionPeriod,
-            CustomerId = bid.CustomerId
+            CustomerId = bid.CustomerId,
+            ObjectName = bid.ObjectName,
         };
     }
 
@@ -76,7 +77,8 @@ public class BidsController : ControllerBase
         {
             DateOfRequest = bidDto.DateOfRequest,
             ConstructionPeriod = bidDto.ConstructionPeriod,
-            CustomerId = bidDto.CustomerId
+            CustomerId = bidDto.CustomerId,
+            ObjectName = bidDto.ObjectName
         };
     }
 }

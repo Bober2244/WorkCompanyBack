@@ -9,4 +9,5 @@ public class Bid : DatabaseEntity.DatabaseEntity
     public int CustomerId { get; set; } 
     public Customer Customer { get; set; } 
     public ICollection<Order> Orders { get; set; } 
+    public string ObjectName { get; set; }
 }
