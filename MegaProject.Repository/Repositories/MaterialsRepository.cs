@@ -67,7 +67,7 @@ public class MaterialsRepository : IMaterialsRepository
             }
 
             material.Name = entity.Name;
-            material.Quantity = entity.Quantity;
+            material.Quantity += entity.Quantity;
             material.MeasurementUnit = entity.MeasurementUnit;
 
             // Save changes to the database

@@ -15,7 +15,16 @@ public class WorkersRepository : IWorkersRepository
 
     public async Task<Worker> Create(Worker entity)
     {
-        await _context.Workers.AddAsync(entity);
+        await _context.Workers.AddAsync(new Worker
+            {
+                Id = _context.Workers.Max(x => x.Id) + 1,
+                Position = entity.Position,
+                FullName = entity.FullName,
+                PhoneNumber = entity.PhoneNumber,
+                Email = entity.Email,
+                BrigadeId = entity.BrigadeId,
+            }
+        );
         await _context.SaveChangesAsync();
         return entity;
     }

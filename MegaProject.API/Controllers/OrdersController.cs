@@ -225,6 +225,7 @@ public class OrdersController : ControllerBase
             // Создаем новую запись
             var materialOrder = new MaterialOrder
             {
+                Id = order.MaterialOrders.Count + 1,
                 OrderId = orderId,
                 MaterialId = dto.MaterialId,
                 Quantity = dto.Quantity
@@ -241,7 +242,6 @@ public class OrdersController : ControllerBase
         return Ok(new
         {
             Message = "Материал успешно привязан к заказу.",
-            MaterialId = dto.MaterialId,
             OrderId = orderId,
             RemainingMaterialQuantity = material.Quantity
         });

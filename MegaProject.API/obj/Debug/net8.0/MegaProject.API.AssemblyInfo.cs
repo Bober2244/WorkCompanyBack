@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MegaProject.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af61dfe39b7cda5e7af23522afc19d0e51ddbbdb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69e118d997adce746acb41e76f2c92c32f716cba")]
 [assembly: System.Reflection.AssemblyProductAttribute("MegaProject.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MegaProject.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
