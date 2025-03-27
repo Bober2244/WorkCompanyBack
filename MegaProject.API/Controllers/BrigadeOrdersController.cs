@@ -63,7 +63,8 @@ public class BrigadeOrdersController : ControllerBase
         return new BrigadeOrderDto
         {
             OrderId = brigadeOrder.OrderId,
-            BrigadeId = brigadeOrder.BrigadeId
+            BrigadeId = brigadeOrder.BrigadeId,
+            WorkStatus = brigadeOrder.WorkStatus,
         };
     }
 
@@ -72,7 +73,8 @@ public class BrigadeOrdersController : ControllerBase
         return new BrigadeOrder
         {
             OrderId = brigadeOrderDto.OrderId,
-            BrigadeId = brigadeOrderDto.BrigadeId
+            BrigadeId = brigadeOrderDto.BrigadeId,
+            WorkStatus = brigadeOrderDto.WorkStatus,
         };
     }
 }

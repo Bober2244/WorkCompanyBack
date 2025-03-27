@@ -39,11 +39,6 @@ public class BrigadesController : ControllerBase
             .Include(b => b.BrigadeOrders)   // Загрузить заказы, связанные с бригадой
             .FirstOrDefaultAsync(b => b.UserId == userId);
 
-        if (brigade == null)
-        {
-            return NotFound("Бригада для указанного пользователя не найдена.");
-        }
-
         return Ok(brigade); // Возвращаем сущность полностью
     }
 

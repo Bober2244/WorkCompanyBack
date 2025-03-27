@@ -1,5 +1,6 @@
 using MegaProject.Domain.Models;
 using MegaProject.Repository.Interface;
+using MegaProject.Repository.Migrations;
 using Microsoft.EntityFrameworkCore;
 
 namespace MegaProject.Repository.Repositories;
@@ -32,7 +33,8 @@ public class OrdersRepository : IOrdersRepository
         {
             Id = _context.BrigadeOrders.Max(bo => bo.Id) + 1,
             OrderId = orderId,
-            BrigadeId = brigadeId
+            BrigadeId = brigadeId,
+            WorkStatus = "В работе",
         };
         _context.BrigadeOrders.Add(brigadeOrder);
 
@@ -75,6 +77,7 @@ public class OrdersRepository : IOrdersRepository
             .Include(w => w.MaterialOrders)
             .Include(w => w.BrigadeOrders)
             .ThenInclude(bo => bo.Brigade)
+            
             .ToListAsync();
     }
 

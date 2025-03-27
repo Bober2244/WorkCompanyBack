@@ -57,7 +57,8 @@ public class BrigadeOrdersRepository : IBrigadeOrdersRepository
             .Where(bo => bo.Id == entity.Id)
             .ExecuteUpdateAsync(bo => bo
                 .SetProperty(bo => bo.OrderId, entity.OrderId)
-                .SetProperty(bo => bo.BrigadeId, entity.BrigadeId));
+                .SetProperty(bo => bo.BrigadeId, entity.BrigadeId)
+                .SetProperty(bo => bo.WorkStatus, entity.WorkStatus));
 
         return result > 0;
     }
