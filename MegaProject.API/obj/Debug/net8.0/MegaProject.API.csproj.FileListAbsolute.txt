@@ -520,3 +520,14 @@
 /Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/obj/Debug/net8.0/ref/MegaProject.API.dll
 /Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/Npgsql.dll
 /Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/EPPlus.dll
+/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/EPPlus.Interfaces.dll
+/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/EPPlus.System.Drawing.dll
+/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Json.dll
+/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/Microsoft.IO.RecyclableMemoryStream.dll
+/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/Microsoft.Win32.SystemEvents.dll
+/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/System.Drawing.Common.dll
+/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/System.Security.Cryptography.Pkcs.dll
+/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll
+/Users/bi_ba/RiderProjects/WorkCompanyBack/MegaProject.API/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll

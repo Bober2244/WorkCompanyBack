@@ -23,6 +23,11 @@ public class PurchasesService : IPurchasesService
         return await _purchasesRepository.GetById(id);
     }
 
+    public async Task<byte[]> GetSmeta()
+    {
+        return await _purchasesRepository.GetSmeta();
+    }
+
     public async Task<bool> Delete(int id)
     {
         return await _purchasesRepository.Delete(id);

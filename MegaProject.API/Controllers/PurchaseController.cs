@@ -31,6 +31,22 @@ public class PurchaseController : ControllerBase
         return Ok(purchase);
     }
 
+    [HttpGet("purchasesSmeta")]
+    public async Task<IActionResult> GetSmeta()
+    {
+        try
+        {
+            var smeta = await _purchasesService.GetSmeta();
+
+            return 
+               File(smeta, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Смета_закупок.xlsx");
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
     [HttpPost]
     public async Task<IActionResult> CreatePurchase([FromBody] PurchaseDto purchaseDto)
     {

@@ -1,16 +1,14 @@
 using MegaProject.Repository;
 using MegaProject.Repository.Extentions;
-using MegaProject.Repository.Interface;
-using MegaProject.Repository.Repositories;
 using MegaProject.Services.Extensions;
 using MegaProject.Services.Helpers;
-using MegaProject.Services.Interfaces;
-using MegaProject.Services.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
+using OfficeOpenXml;
 
 var builder = WebApplication.CreateBuilder(args);
 
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 // Add services to the container.
 
 builder.Services.AddControllers();
