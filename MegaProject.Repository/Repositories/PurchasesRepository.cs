@@ -51,7 +51,6 @@ public class PurchasesRepository : IPurchasesRepository
             .Include(w => w.Material)
             .ExecuteUpdateAsync(w => w
                 .SetProperty(w => w.DateOfPurchase, entity.DateOfPurchase)
-                .SetProperty(w => w.DeliveryDate, entity.DeliveryDate)
                 .SetProperty(w => w.PurchaseQuantity, entity.PurchaseQuantity)
                 .SetProperty(w => w.MaterialId, entity.MaterialId));
 

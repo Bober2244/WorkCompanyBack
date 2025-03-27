@@ -6,4 +6,5 @@ public class BrigadeOrderDto
     
     public int BrigadeId { get; set; } 
     public string WorkStatus { get; set; }
+    public bool IsBrigadeResponded { get; set; }
 }

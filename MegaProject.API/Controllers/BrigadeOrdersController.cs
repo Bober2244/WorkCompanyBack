@@ -65,6 +65,7 @@ public class BrigadeOrdersController : ControllerBase
             OrderId = brigadeOrder.OrderId,
             BrigadeId = brigadeOrder.BrigadeId,
             WorkStatus = brigadeOrder.WorkStatus,
+            IsBrigadeResponded = brigadeOrder.IsBrigadeResponded,
         };
     }
 
@@ -75,6 +76,7 @@ public class BrigadeOrdersController : ControllerBase
             OrderId = brigadeOrderDto.OrderId,
             BrigadeId = brigadeOrderDto.BrigadeId,
             WorkStatus = brigadeOrderDto.WorkStatus,
+            IsBrigadeResponded = brigadeOrderDto.IsBrigadeResponded,
         };
     }
 }

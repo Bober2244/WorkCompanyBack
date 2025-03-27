@@ -13,4 +13,5 @@ public class BrigadeOrder : DatabaseEntity.DatabaseEntity
     public int BrigadeId { get; set; } 
     public Brigade Brigade { get; set; } 
     public string WorkStatus { get; set; }
+    public bool IsBrigadeResponded { get; set; }
 }

@@ -63,7 +63,6 @@ public class PurchaseController : ControllerBase
         return new PurchaseDto
         {
             DateOfPurchase = purchase.DateOfPurchase,
-            DeliveryDate = purchase.DeliveryDate,
             PurchaseQuantity = purchase.PurchaseQuantity,
             MaterialId = purchase.MaterialId
         };
@@ -74,7 +73,6 @@ public class PurchaseController : ControllerBase
         return new Purchase
         {
             DateOfPurchase = purchaseDto.DateOfPurchase,
-            DeliveryDate = purchaseDto.DeliveryDate,
             PurchaseQuantity = purchaseDto.PurchaseQuantity,
             MaterialId = purchaseDto.MaterialId
         };

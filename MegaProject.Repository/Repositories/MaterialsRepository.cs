@@ -55,6 +55,16 @@ public class MaterialsRepository : IMaterialsRepository
     {
         try
         {
+            await _context.Purchases
+                .AddAsync(new Purchase
+                    {
+                        Id = _context.Purchases.Max(x => x.Id) + 1,
+                        DateOfPurchase = DateTime.UtcNow,
+                        PurchaseQuantity = entity.Quantity,
+                        MaterialId = entity.Id,
+                    }
+                );
+            
             var material = await _context.Materials
                 .Include(o => o.MaterialOrders)
                 .Include(o => o.Purchases)
