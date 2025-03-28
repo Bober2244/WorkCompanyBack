@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MegaProject.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc37c96dfacca726322c42cbf45b0b4637954c99")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502a08f2acb84fbc5c7a2e2e71218518573353fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("MegaProject.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MegaProject.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -23,6 +23,11 @@ public class BrigadeOrdersService : IBrigadeOrdersService
         return await _repository.GetById(id);
     }
 
+    public async Task<IEnumerable<BrigadeOrder>> GetByOrderId(int id)
+    {
+        return await _repository.GetByOrderId(id);
+    }
+
     public async Task<bool> Delete(int id)
     {
         return await _repository.Delete(id);

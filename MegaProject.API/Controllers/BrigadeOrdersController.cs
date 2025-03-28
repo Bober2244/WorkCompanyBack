@@ -31,6 +31,14 @@ public class BrigadeOrdersController : ControllerBase
         return Ok(brigadeOrder);
     }
 
+    [HttpGet("brigade-orders/{id:int}")]
+    public async Task<IActionResult> GetBrigadeOrdersByOrderId(int id)
+    {
+        var brigadeOrders = await _brigadeOrdersService.GetByOrderId(id);
+        if (brigadeOrders == null) return NotFound();
+        return Ok(brigadeOrders);
+    }
+
     [HttpPost]
     public async Task<IActionResult> CreateBrigadeOrder([FromBody] BrigadeOrderDto brigadeOrderDto)
     {

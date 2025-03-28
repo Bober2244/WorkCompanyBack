@@ -38,6 +38,16 @@ public class BrigadeOrdersRepository : IBrigadeOrdersRepository
             .ToListAsync();
     }
 
+    public async Task<IEnumerable<BrigadeOrder>> GetByOrderId(int id)
+    {
+        return await _context.BrigadeOrders
+            .AsNoTracking()
+            .Include(bo => bo.Order)
+            .Include(bo => bo.Brigade)
+            .Where(bo => bo.OrderId == id && bo.WorkStatus == "В работе")
+            .ToListAsync();
+    }
+
     public async Task<bool> Delete(int id)
     {
         var brigadeOrder = await _context.BrigadeOrders.FindAsync(id);
